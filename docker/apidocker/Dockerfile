@@ -1,0 +1,18 @@
+# Use an official Ubuntu as a parent image
+FROM python:3.9-slim
+
+# Set the working directory in the container
+WORKDIR /usr/local/bin/
+
+# Install Python
+RUN apt-get update
+RUN pip install flask psutil
+
+# Copy the current directory contents into the container at /usr/src/app
+COPY scripts/run.py .
+
+# Make port 5000 available to the world outside this container
+EXPOSE 5000
+
+# Run app.py when the container launches
+CMD ["python3", "run.py"]
