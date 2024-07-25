@@ -15,3 +15,8 @@ sudo docker ps -a
 sudo docker build -t vsdpsingh/vishwadeep:apicaller1.0 .
 # run container
 sudo docker run --name apicaller --network my_network vsdpsingh/vishwadeep:apicaller1.0
+
+# for docker-compose
+sudo docker-compose up
+sudo docker-compose down
+sudo docker-compose up --build
